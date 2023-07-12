@@ -1,12 +1,11 @@
 import "./App.css";
-import Weather from "./Weather";
+import Weather from "./Weather.js";
 
-function App() {
+export default function App() {
   return (
     <div className="App">
       <div className="container">
-        <h1>Weather App</h1>
-        <Weather />
+        <Weather defaultCity="Warsaw" />
         <footer>
           This project coded by Iryna Chubenko{" "}
           <a
@@ -20,5 +19,3 @@ function App() {
     </div>
   );
 }
-
-export default App;
