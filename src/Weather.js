@@ -4,22 +4,27 @@ import "./Weather.css";
 
 export default function Weather(props) {
   const [weatherData, setWeatherData] = useState({ ready: false });
-  function handleResponse(response) {
-    console.log(response.data);
-    setWeatherData({
-      ready: true,
-      city: response.data.name,
-      temperature: response.data.main.temp,
-      description: response.data.weather[0].description,
-      time: "Tuesday 5:20",
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/rain_light.png",
-      wind: response.data.wind.speed,
-      humidity: response.data.main.humidity,
+
+  if (!weatherData.ready) {
+    let apiKey = "52e9e32cb26783779ed86b1d03ee38c7";
+    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric&lang=en`;
+    axios.get(apiURL).then((response) => {
+      console.log(response.data);
+      setWeatherData({
+        ready: true,
+        city: response.data.name,
+        temperature: response.data.main.temp,
+        description: response.data.weather[0].description,
+        time: "Tuesday 5:20",
+        iconUrl: "https://ssl.gstatic.com/onebox/weather/64/rain_light.png",
+        wind: response.data.wind.speed,
+        humidity: response.data.main.humidity,
+      });
     });
   }
 
-  if (weatherData.ready) {
-    return (
+  return (
+    weatherData.ready && (
       <div className="Weather">
         <form>
           <div className="row">
@@ -67,11 +72,6 @@ export default function Weather(props) {
           </div>
         </div>
       </div>
-    );
-  } else {
-    let apiKey = "1fd8093fa5ff12d796d7de756cc9d6b9";
-    let apiURL = `https://api.openweathermap.org/data/2.5/weather?q=${props.defaultCity}&appid=${apiKey}&units=metric&lang=en`;
-    axios.get(apiURL).then(handleResponse);
-    return "Loading...";
-  }
+    )
+  );
 }
