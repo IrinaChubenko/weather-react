@@ -12,7 +12,7 @@ export default function App() {
             href=" https://github.com/IrinaChubenko/weather-react"
             target="_blank"
           >
-            open-sorsed on GitHub
+            open-sourse on GitHub
           </a>
         </footer>
       </div>
