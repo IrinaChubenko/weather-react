@@ -1,4 +1,5 @@
 .Weather {
+  background-color: rgb(185, 217, 217);
   border: 3px solid #dadde1;
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(135, 135, 135);
@@ -8,6 +9,11 @@
 
 .Weather form {
   margin-bottom: 20px;
+}
+
+.form-control:focus {
+  box-shadow: 0 0 5px rgba(47, 79, 79);
+  border: 1px solid rgba(47, 79, 79);
 }
 
 .Weather h1 {
@@ -22,11 +28,9 @@
   padding: 0;
 }
 
-.Weather img {
+.Weather canvas {
   margin-right: 10px;
   float: left;
-  height: 64px;
-  width: 64px;
 }
 
 .Weather li {
@@ -38,9 +42,10 @@
 
 .Weather .temperature {
   font-weight: 300;
-  color: rgb(33, 33, 33);
-  font-size: 64px;
-  line-height: 64px;
+  color: rgb(41, 41, 41);
+  opacity: 0.8;
+  font-size: 54px;
+  line-height: 54px;
 }
 
 .Weather .unit {

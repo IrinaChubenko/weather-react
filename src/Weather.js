@@ -15,7 +15,7 @@ export default function Weather(props) {
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       date: new Date(response.data.dt * 1000),
-      iconUrl: `https://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
+      icon: response.data.weather[0].icon,
       wind: response.data.wind.speed,
       humidity: response.data.main.humidity,
     });
@@ -57,7 +57,7 @@ export default function Weather(props) {
               <input
                 type="submit"
                 value="Search"
-                className="btn btn-primary w-100"
+                className="btn btn-light  w-100"
               ></input>
             </div>
           </div>
