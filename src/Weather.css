@@ -1,6 +1,6 @@
 .Weather {
   background-color: rgb(185, 217, 217);
-  border: 3px solid #dadde1;
+  border: 3px solid rgb(38, 83, 78);
   font-family: Arial, Helvetica, sans-serif;
   color: rgb(135, 135, 135);
   padding: 16px;
@@ -14,6 +14,10 @@
 .form-control:focus {
   box-shadow: 0 0 5px rgba(47, 79, 79);
   border: 1px solid rgba(47, 79, 79);
+}
+
+.Weather a {
+  color: rgb(38, 83, 78);
 }
 
 .Weather h1 {
@@ -30,7 +34,6 @@
 
 .Weather canvas {
   margin-right: 10px;
-  float: left;
 }
 
 .Weather li {
@@ -55,4 +58,8 @@
   position: relative;
   top: -34px;
   margin-left: 5px;
+}
+
+footer a {
+  color: rgb(38, 83, 78);
 }
